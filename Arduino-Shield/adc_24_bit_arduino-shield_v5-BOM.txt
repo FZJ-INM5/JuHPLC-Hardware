@@ -1,0 +1,32 @@
+Partlist
+
+Exported from adc_24_bit_arduino-shield_v5.sch 
+
+EAGLE Version 7.7.0 Copyright (c) 1988-2016 CadSoft
+
+Assembly variant: 
+
+Part      Value          Device            Package      
+
+ANALOG                   PINHD-1X3         1X03         
+C1                       CPOL-EUE2-4       E2-4          
+C2                       CPOL-EUE2-4       E2-4         
+C3                       CPOL-EUE2-4       E2-4          
+C4                       CPOL-EUE2-4       E2-4         
+COUNTER                  PINHD-1X3         1X03          
+I2C                      PINHD-1X4         1X04          
+IC1                      MODUL             TEST          
+IC2       MAX232         MAX232            DIL16         
+JP3                      PINHD-1X8CLEANBIG 1X08-CLEANBIG 
+JP5                      PINHD-1X8CLEANBIG 1X08-CLEANBIG 
+JP6                      PINHD-1X6CB       1X06-CLEANBIG 
+JP8                      PINHD-1X6CB       1X06-CLEANBIG 
+LED1                     PINHD-1X3         1X03          
+LED2                     PINHD-1X3         1X03          
+R1        PULL           R-EU_0207/15      0207/15       
+R2        470            R-EU_0207/15      0207/15       
+R3        PULL           R-EU_0207/15      0207/15       
+R5        470            R-EU_0207/15      0207/15       
+RELAIS1+2                PINHD-1X3         1X03          
+S1        Reset          10-XX             B3F-10XX      
+SCHALTER                 PINHD-1X3         1X03          

@@ -1,0 +1,23 @@
+Partlist
+
+Exported from ADC-Board5.sch 
+
+EAGLE Version 7.7.0 Copyright (c) 1988-2016 CadSoft
+
+Assembly variant: 
+
+Part     Value          Device            Package    
+
+C1       100n           C-EUC0805         C0805      
+C3       100n           C-EUC0805         C0805      
+C4       10µ            CPOL-EUC/6032-28R C/6032-28R 
+C5       100n           C-EUC0805         C0805      
+C6       100µ           CPOL-EUD/7343-31R D/7343-31R 
+C7       100n           C-EUC0805         C0805      
+C8       100n           C-EUC0805         C0805      
+C9       10µ            CPOL-EUC/6032-28R C/6032-28R 
+IC1      LT1236         LT1236            SO08       
+IC2      LTC2400        LTC2400           SO08       
+JP1                     PINHD-1X6         1X06       
+JP2                     PINHD-1X5         1X05       
+R1       100            R-EU_M1206        M1206      
