@@ -1,7 +1,7 @@
+#include <FreqCount.h>
 #include "D_Mode.h"
 #include "LED.h"
 #include <Arduino.h>
-#include <FreqCounter.h> //s.o.
 
 D_Mode::D_Mode(LED* roteLED, LED* blaueLED, LTC2400* adc){
 
@@ -18,15 +18,18 @@ void D_Mode::start(){
       //digitalWrite(Ledrot,true);
       long cyclus = 0;
       //Dummy Counter-Messung, weil sonst erstes Zaehlergebnis viel zu hoch ist (16 bit)
-      FreqCounter::start(20);
+      //FreqCount.begin(20);
 
-      while (FreqCounter::f_ready == 0) {
-      }// warten bis der  Counter fertig ist
-            
-      long counts = FreqCounter::f_freq;
+      /*while (!FreqCount.available()) {
+      }// warten bis der  Counter fertig ist*/
+
+      FreqCount.begin(1000);
+
+      long counts = FreqCount.read();
       //Dummy Wandler-Messung
-      this->adc->getValue();
-      FreqCounter::start(1000);
+      //this->adc->getValue();
+      
+      
       //Hauptmess-Schleife durchlaufen, bis ein beliebiges Zeichen gesendet wird
       while (true) {
         //while (Serial.available()==0) {
@@ -39,7 +42,7 @@ void D_Mode::start(){
           }
         }
         
-        while (FreqCounter::f_ready == 0) {
+        while (!FreqCount.available()) {
         }// warten bis der  Counter fertig ist
         
         //rote LED einschalten
@@ -47,8 +50,8 @@ void D_Mode::start(){
         //blaue LED einschalten
         //digitalWrite(Ledblau,true);
         // Counterergebnis zwischenspeichern und Counter erneut starten
-        counts = FreqCounter::f_freq;
-        FreqCounter::start(1000);
+        counts = FreqCount.read();
+        
                 
         // Umwandlung ins Dezimalformat [Mikrovolt]
         long adc_long = this->adc->getValue();

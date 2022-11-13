@@ -1,7 +1,7 @@
 #include "H_Mode.h"
 #include "LED.h"
 #include <Arduino.h>
-#include <FreqCounter.h> //s.o.
+#include <FreqCount.h>
 
 H_Mode::H_Mode(LED* roteLED, LED* blaueLED, LTC2400* adc){
 

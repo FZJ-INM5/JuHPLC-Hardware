@@ -1,7 +1,7 @@
 #include "I_Mode.h"
 #include "LED.h"
 #include <Arduino.h>
-#include <FreqCounter.h> //s.o.
+
 
 I_Mode::I_Mode(LED* roteLED, LED* blaueLED, LTC2400* adc){
 
@@ -16,13 +16,18 @@ void I_Mode::start(){
   // rote LED fÃƒÂ¼r die Zeit des seriellen Datentrasfers einschalten
   
   blaueLED->setState(false);
+  delay(50);
   roteLED->setState(true);
+  delay(50);
   
-  Serial.print ("Code:AI1!ADC:LTC2400!Typ:24bit-Interface_ADC_und_Counter!Version:V18!Datum=19.05.2017/Autor:db-vm\n");
+  Serial.print ("Code:AI1!ADC:LTC2400!Typ:24bit-Interface_ADC_und_Counter!Version:V19!Datum=13.11.2022/Autor:db-vm\n");
+  delay(50);
   // LED schalten - der Datentrasfer ist beendet
   
   blaueLED->setState(true);
+  delay(50);
   roteLED->setState(false);
+  delay(50);
     
 }
 

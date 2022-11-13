@@ -1,7 +1,7 @@
 #include "Q_Mode.h"
 #include "LED.h"
 #include "LTC2400.h"
-#include <FreqCounter.h> //s.o.
+#include <FreqCount.h>
 #include <Arduino.h>
 
 

@@ -1,7 +1,7 @@
 #include "B_Mode.h"
 #include "LED.h"
 #include "LTC2400.h"
-#include <FreqCounter.h> //s.o.
+#include <FreqCount.h>
 
 #include <Arduino.h>
 
@@ -22,19 +22,20 @@ void B_Mode::start(){
       this->roteLED->setState(false);
       
       //Dummy Messung, weil sonst erstes Zaehlergebnis viel zu hoch ist (16 bit)
-      FreqCounter::start(5);
+      /*FreqCount.begin(20);
 
-      while (FreqCounter::f_ready == 0) {
+      while (!FreqCount.available()) {
       }// warten bis der  Counter fertig ist
       
-      long counts = FreqCounter::f_freq;
-      FreqCounter::start(500);
+      long counts = FreqCount.read();
+      FreqCount.end();*/
+      FreqCount.begin(500);
       this->adc->getValue(); //   Wandlerprogrogramm aufrufen
       
-      while (FreqCounter::f_ready == 0) {
+      while (!FreqCount.available()) {
       }// warten bis der  Counter fertig ist
       
-      counts = FreqCounter::f_freq;
+      long counts = FreqCount.read();
       Serial.print("<");
       Serial.print(char(this->adc->getSIG()));
       Serial.print(char(this->adc->getWandler_high()));
